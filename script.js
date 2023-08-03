@@ -1,6 +1,8 @@
 const buttons = document.querySelectorAll('.buttons button')
 const inputEl = document.querySelector('input')
 const output = document.querySelector('#output')
+const fahrenheit_button = document.querySelector(".fahernheit")
+const celsius_button = document.querySelector(".celsius")
 const historyContainer = document.querySelector('.historyContainer')
 
 const STORAGE_NAME = 'historyStorage';
@@ -30,9 +32,17 @@ for (let button of buttons) {
         }
         else if (symbol == 'DEL') {
             inputEl.value = inputEl.value.slice(0, inputEl.value.length - 1)
-        } else if (symbol == 'CLEAR') {
+        } 
+        else if (symbol == 'CLEAR') {
             inputEl.value = ''
-        } else {
+        }
+        // else if(symbol=="F"){
+        //    output.value = (inputEl.value - 32) / 1.8
+        //     console.log(output.value)
+        //     //fahernheit()
+        // }
+        else {
+            if(symbol != 'F')
             inputEl.value += symbol;
         }
 
@@ -42,12 +52,24 @@ for (let button of buttons) {
 }
 
 inputEl.addEventListener('input', registrateChange)
-
+// inputEl.addEventListener('input', fahernheit)
 
 function registrateChange() {
     let newValue = eval(inputEl.value) || ''
 
     output.value = newValue
+}
+
+function fahernheit (){
+    let fvalue = (inputEl.value * 1.8) + 32
+    output.value = fvalue
+    console.log(output.value)
+}
+
+function celsius(){
+    let fvalue = inputEl.value * 1.8 + 32
+    
+    output.value = fvalue
 }
 
 function refreshHistory() {
@@ -92,3 +114,4 @@ function truncate(string, max) {
         return string
     }
 }
+
