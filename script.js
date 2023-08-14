@@ -41,14 +41,19 @@ for (let button of buttons) {
         //     console.log(output.value)
         //     //fahernheit()
         // }
+        
+
         else {
             if(symbol != 'F')
             inputEl.value += symbol;
         }
+        
 
 
         registrateChange()
     })
+
+    
 }
 
 inputEl.addEventListener('input', registrateChange)
@@ -67,9 +72,9 @@ function fahernheit (){
 }
 
 function celsius(){
-    let fvalue = inputEl.value * 1.8 + 32
-    
+    let fvalue = (inputEl.value - 32 ) / 1.8
     output.value = fvalue
+    console.log(output.value)
 }
 
 function refreshHistory() {
