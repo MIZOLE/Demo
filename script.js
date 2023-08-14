@@ -25,8 +25,7 @@ for (let button of buttons) {
                 historyElements.push(inputEl.value)
             }
             localStorage.setItem(STORAGE_NAME, JSON.stringify(historyElements))
-            
-
+        
             inputEl.value = output.value
             refreshHistory()
         }
@@ -44,12 +43,9 @@ for (let button of buttons) {
         
 
         else {
-            if(symbol != 'F')
+            if(symbol != 'F' && symbol != "C")
             inputEl.value += symbol;
         }
-        
-
-
         registrateChange()
     })
 
@@ -75,6 +71,10 @@ function celsius(){
     let fvalue = (inputEl.value - 32 ) / 1.8
     output.value = fvalue
     console.log(output.value)
+}
+
+function percentage (){
+    let fvalue = inputEl.value 
 }
 
 function refreshHistory() {
