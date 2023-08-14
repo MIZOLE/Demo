@@ -23,8 +23,7 @@ for (let button of buttons) {
                 historyElements.push(inputEl.value)
             }
             localStorage.setItem(STORAGE_NAME, JSON.stringify(historyElements))
-            
-
+        
             inputEl.value = output.value
             refreshHistory()
         }
@@ -35,14 +34,11 @@ for (let button of buttons) {
         } else {
             inputEl.value += symbol;
         }
-
-
         registrateChange()
     })
 }
 
 inputEl.addEventListener('input', registrateChange)
-
 
 function registrateChange() {
     let newValue = eval(inputEl.value) || ''
