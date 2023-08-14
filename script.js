@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll('.buttons button')
-const inputEl = document.querySelector('input')
+let inputEl = document.querySelector('input')
 const output = document.querySelector('#output')
 const fahrenheit_button = document.querySelector(".fahernheit")
 const celsius_button = document.querySelector(".celsius")
@@ -56,10 +56,24 @@ inputEl.addEventListener('input', registrateChange)
 // inputEl.addEventListener('input', fahernheit)
 
 function registrateChange() {
-    let newValue = eval(inputEl.value) || ''
+    
 
+    let newValue = eval(inputEl.value) || '';
     output.value = newValue
+
+    console.log(newValue)
+
+    if ( newValue == Infinity){
+        output.value = "Can't divide by 0";
+    } 
+
+    if (newValue == 0 + 0 ){
+        output.value = 0
+        window.location.reload()
+        // inputEl.value = "";
+    }     
 }
+
 
 function fahernheit (){
     let fvalue = (inputEl.value * 1.8) + 32
@@ -80,6 +94,11 @@ function percentage(){
 
 }
 
+function ClearHistory(){
+    window.location.reload()
+    localStorage.clear()
+}
+
 
 function refreshHistory() {
     historyContainer.innerHTML = ''
@@ -95,6 +114,7 @@ function refreshHistory() {
 
         try {
             evaluated = eval(historyElements[i])
+        
             
         } catch (error) {
             evaluated = 'INVALID RESULT'
