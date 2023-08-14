@@ -41,7 +41,7 @@ for (let button of buttons) {
         //     //fahernheit()
         // }
         else {
-            if(symbol != 'F' && symbol != "C")
+            if(symbol != 'F' && symbol != "C" && symbol != "%")
             inputEl.value += symbol;
         }
         registrateChange()
@@ -70,8 +70,12 @@ function celsius(){
     console.log(output.value)
 }
 
-function percentage (){
-    let fvalue = inputEl.value 
+function percentage(){
+    let fvalue = inputEl.value / 100
+    console.log(fvalue)
+    output.value = fvalue
+    console.log(output.value)
+
 }
 
 function refreshHistory() {
