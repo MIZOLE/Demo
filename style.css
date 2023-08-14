@@ -1,45 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
+h1{
+   
+    /* margin-right: 20%; */
+
+    color: black;
+}
+
 #input,
 #output {
     padding: 0.5em;
 }
 
 #output {
+    margin-top: -1px;
     text-align: right;
     background-color:ghostwhite;
     color: lightslategray;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    
 }
 
 * {
     box-sizing: border-box;
 }
+body{
+    background-color: plum;
+}
 
 
 
-body {
+content {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 200%;
     height: 377px;
     margin: 0;
-    background-color: white;
+    background-color: plum;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: none;
     margin-right: 30%;
+    margin-top: 0%;
 }
 
 .container {
     overflow: none;
     width: 60px;
     height: 50px;
-    background-color: rgb(40, 40, 40);
+    /* background-color: rgb(40, 40, 40); */
     /* box-shadow: 0 0 4px rgb(0, 0, 0); */
     display: grid;
     color: white;
     grid-template-columns: 1fr 250px;
+    
 }
 
 .leftSide {
@@ -49,15 +64,19 @@ body {
 
 .rightSide {
     background-color:grey;
+    /* background-color: lavenderblushz; */
     /* display: flex; */
     flex-direction: column;
     height: 100vh;
     color: black;
+    margin-top: -95px;
 }
 
 .rightSide h4 {
     padding: 0.5em;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -77,13 +96,17 @@ h1, h2, h3, h4, h5, h6 {
     flex-grow: 1;
     overflow-y: auto;
     overflow-x: hidden;
+   
 }
 
 /* button, */
 input {
+    margin-top: -95px;
     font: inherit;
-    color:black;
-    background-color:gainsboro;
+    /* color:black; */
+    background-color:whitesmoke;
+    border: gainsboro;
+    box-shadow: 1 6px 5px rgba(1, 1, 1, 1.2);
 }
 
 .buttons {
@@ -111,6 +134,7 @@ input {
     padding-right: 1em;
     color: white;
     font-size: 60%;
+    
 }
 
 /* .historyItem>*:first-child {
