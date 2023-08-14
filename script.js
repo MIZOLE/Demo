@@ -72,11 +72,11 @@ function celsius(){
 
 function percentage(){
     let fvalue = inputEl.value / 100
-    console.log(fvalue)
     output.value = fvalue
     console.log(output.value)
 
 }
+
 
 function refreshHistory() {
     historyContainer.innerHTML = ''
