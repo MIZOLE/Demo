@@ -133,6 +133,19 @@ function refreshHistory() {
         })
 
     }
+
+    
+
+    // function onDeleteAll() {
+    //     console.log("Deleted all history");
+    //   }
+      
+    //   function deleteAllHistory() {
+    //     let deletingAll = browser.history.deleteAll();
+    //     deletingAll.then(onDeleteAll);
+    //   }
+      
+    //   deleteAllHistory();
 }
 
 function truncate(string, max) {
@@ -143,4 +156,12 @@ function truncate(string, max) {
         return string
     }
 }
+
+function deleteAllHistory(){
+
+        localStorage.clear()
+
+        window.location.reload()
+
+    }
 
